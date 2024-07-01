@@ -1,0 +1,164 @@
+﻿<Window x:Class="RegistryManipulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistryManipulator"
+        xmlns:context="clr-namespace:RegistryManipulator.Contexts"
+        mc:Ignorable="d"
+        Title="Registry Manipulator" Height="500" Width="350"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow"
+        >
+
+    <Window.DataContext>
+        <context:MainWindowContext/>
+    </Window.DataContext>
+
+    <Grid Background="#111111">
+        <!--title-->
+        <Label Foreground="DarkMagenta" Content="Registry Manipulator" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Margin="0,10,0,0"/>
+        <TextBlock Foreground="Aqua" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,50,10,0" TextWrapping="WrapWithOverflow" TextAlignment="Left">
+            Using this application you agree to the fact that the developer is not responsible for any harm to your computer's hardware or software.
+            <LineBreak/>
+            Incorrect usage of this program may make your Windows unusable.
+            <LineBreak/>
+            Use only if you know what you are doing !
+           
+        </TextBlock>
+               
+        <!--Controls-->
+        
+        <Button Content="Edit File Context Menu" x:Name="buttonFilesRightClickMenu"
+            HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" Height="35" Width="310"
+            ToolTip="Manipulate right click options for files. Add, Edit or Remove entries"
+            Background="Transparent" Click="buttonFilesRightClickMenu_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Foreground" Value="Coral"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="Transparent">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Foreground" Value="DarkMagenta" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+
+        <Button Content="Edit Folder Context Menu" x:Name="buttonFolderRightClickMenu"
+                 Background="Transparent" BorderThickness="0"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,240,0,0" Height="35" Width="310"
+                ToolTip="Manipulate right click options for folders. Add, Edit or Remove entries"
+                Click="buttonFolderRightClickMenu_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Foreground" Value="Coral"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="Transparent">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Foreground" Value="DarkMagenta" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button Content="Edit Desktop Context Menu" x:Name="buttonDesktopRightClickMenu"
+                 Background="Transparent" BorderThickness="0"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,280,0,0" Height="35" Width="310"
+                ToolTip="Manipulate right click options for desktop. Add, Edit or Remove entries"
+                Click="buttonDesktopRightClickMenu_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Foreground" Value="Coral"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="Transparent">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Foreground" Value="DarkMagenta" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button Content="Windows 11 Right Click Menu FIX" x:Name="buttonWindows11Fix"
+                 Background="Transparent" BorderThickness="0"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,320,0,0" Height="35" Width="310"
+                ToolTip="Apply Windows 10 right click menu style to the Windows 11 version of File Explorer"
+                Click="buttonWindows11Fix_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Foreground" Value="Coral"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="Transparent">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Foreground" Value="DarkMagenta" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button Content="Remove Stored Key" x:Name="buttonReset"
+                Background="Transparent" BorderThickness="0"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,360,0,0" Height="35" Width="310"
+                ToolTip="Reset all changes made by this application"
+                Click="buttonReset_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Foreground" Value="Red"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="Transparent">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Foreground" Value="DarkRed" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Label Foreground="Aqua" Content="Developed by: Wizzy" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20"/>
+        <Label Foreground="Aqua" Content="{Binding VersionString}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
+    </Grid>
+</Window>
